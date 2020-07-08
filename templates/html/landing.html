@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'styles/landing.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+
+
+    <div class="container">
+    <h2>Оставьте свои пожелание</h2>
+
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+            <div>
+                <label>Почта</label>
+                {{ form.email }}
+            </div>
+            <div>
+            <label>Имя</label>
+            {{ form.first_name }}
+            </div>
+            <div>
+            <label>Фамилия</label>
+            {{ form.second_name }}
+            </div>
+            <div>
+            <label>Сообщение</label>
+            {{ form.msg }}
+            </div>
+            <div>
+            <input type="submit" value="Отправить">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
